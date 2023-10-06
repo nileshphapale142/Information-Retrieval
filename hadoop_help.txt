@@ -1,0 +1,11 @@
+hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.6.jar wordcount input output
+
+javac -classpath ${HADOOP_HOME}/share/hadoop/common/hadoop-common-3.3.6.jar:${HADOOP_HOME}/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.3.6.jar:${HADOOP_HOME}/share/hadoop/common/lib/commons-cli-1.2.jar -d /path/to/compiled_classes WordCount.java
+
+jar cvf WordCount.jar -C /path/to/compiled_classes .
+
+hadoop jar WordCount.jar org.myorg.WordCount /user/hadoop/input /user/hadoop/output
+
+export HADOOP_CLASSPATH=$HADOOP_HOME/share/hadoop/common/hadoop-common-*.jar:$HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-client-core-*.jar
+
+/eclipse-workspace/Block Sort Based Indexer/src/
